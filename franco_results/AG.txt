@@ -1,0 +1,987 @@
+1)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.20  86.80    0.   0.  30.   4.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.80  87.30  359. 179.  89.  40.0   0.99  -0.50  3.99 200.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-n64.dat
+# nsampl
+256
+# ns
+64
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 10
+
+ *****************************
+ ITERATION N.  1831
+ -----------------------------------------
+ DEME # 1
+ fitness =  21.
+ best string :
+ 2774 8684 183 107 42 158 51 -53 368 10090 64
+ -----------------------------------------
+ DEME # 2
+ fitness =  16.
+ best string :
+ 2722 8688 10 66 79 299 67 -58 371 8205 61
+ -----------------------------------------
+ DEME # 3
+ fitness =  20.
+ best string :
+ 2780 8680 358 102 61 247 60 -51 354 10638 46
+ -----------------------------------------
+ DEME # 4
+ fitness =  16.
+ best string :
+ 2722 8685 358 75 85 297 62 -50 391 14468 77
+ *****************************
+
+2)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.20  86.80    0.   0.  30.   4.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.80  87.30  359. 179.  89.  40.0   0.99  -0.50  3.99 200.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-n64.dat
+# nsampl
+256
+# ns
+64
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  2001
+ -----------------------------------------
+ DEME # 1
+ fitness =  13.
+ best string :
+ 2727 8691 15 71 79 392 50 -58 364 8727 57 (M 7.9 L 169 L+ 96.3 )
+ -----------------------------------------
+ DEME # 2
+ fitness =  14.
+ best string :
+ 2727 8692 256 149 21 386 53 -57 357 8738 57 (M 7.9 169 l+ 96.3)
+ -----------------------------------------
+ DEME # 3
+ fitness =  15.
+ best string :
+ 2720 8683 358 77 88 398 66 -65 356 10565 3
+ -----------------------------------------
+ DEME # 4
+ fitness =  19.
+ best string :
+ 2761 8718 215 70 85 326 61 -51 353 12145 1
+
+3)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+1000 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.20  86.80    0.   0.  30.   8.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.80  87.30  359. 179.  89.  30.0   0.99  -0.50  3.99 200.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-n64i.dat
+# nsampl
+256
+# ns
+64
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 10
+
+ *****************************
+ ITERATION N.  2001
+ -----------------------------------------
+ DEME # 1
+ fitness =  25.
+ best string :
+ 2777 8702 191 112 45 247 56 -54 362 11961 58
+ -----------------------------------------
+ DEME # 2
+ fitness =  18.
+ best string :
+ 2723 8693 10 68 75 261 62 -62 368 9008 62
+ -----------------------------------------
+ DEME # 3
+ fitness =  25.
+ best string :
+ 2776 8701 6 99 73 300 55 -58 357 14881 66
+ -----------------------------------------
+ DEME # 4
+ fitness =  24.
+ best string :
+ 2779 8681 3 121 42 298 63 -55 352 8156 39
+
+4)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.20  86.80    0.   0.  20.   4.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.80  87.30  359. 179.  89.  40.0   0.99  -0.50  3.99 200.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-n64.dat
+# nsampl
+256
+# ns
+64
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  2001
+ -----------------------------------------
+ DEME # 1
+ fitness =  13.
+ best string :
+ 2727 8691 15 71 79 392 50 -58 364 8727 57 (M 7.9 L 169 L+ 96.3 )
+ -----------------------------------------
+ DEME # 2
+ fitness =  14.
+ best string :
+ 2709 8710 256 129 68 386 53 -57 357 8727 55
+ -----------------------------------------
+ DEME # 3
+ fitness =  15.
+ best string :
+ 2720 8683 358 77 88 398 66 -65 356 10565 3
+ -----------------------------------------
+ DEME # 4
+ fitness =  19.
+ best string :
+ 2761 8718 215 70 85 326 61 -51 353 12145 1
+
+5)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.20  86.80  250.   0.  20.   4.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.80  87.30  289. 179.  89.  16.0   0.99  -0.50  3.99 200.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-n64.dat
+# nsampl
+256
+# ns
+64
+#
+0
+#
+2 1
+#
+#
+8.753 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  196
+ -----------------------------------------
+ DEME # 1
+ fitness =  30.
+ best string :
+ 2744 8715 253 95 82 151 72 -53 367 16615 96
+ -----------------------------------------
+ DEME # 2
+ fitness =  33.
+ best string :
+ 2749 8727 250 93 81 112 58 -51 387 18038 39
+ -----------------------------------------
+ DEME # 3
+ fitness =  34.
+ best string :
+ 2723 8716 251 118 75 98 50 -50 350 8062 71
+ -----------------------------------------
+ DEME # 4
+ fitness =  30.
+ best string :
+ 2740 8695 250 6 29 53 66 -57 364 12939 22
+ *****************************
+
+6)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.20  86.80    0.   0.  15.  10.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.80  87.30  359. 179.  89.  30.0   0.99  -0.50  3.99 200.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-n46.dat
+# nsampl
+256
+# ns
+46
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  75
+ -----------------------------------------
+ DEME # 1
+ fitness =  13.25
+ best string :
+ 2759 8681 183 49 27 248 51 -57 354 9416 60
+ -----------------------------------------
+ DEME # 2
+ fitness =  10.25
+ best string :
+ 2777 8695 202 29 45 210 54 -50 371 13633 14
+ -----------------------------------------
+ DEME # 3
+ fitness =  11.25
+ best string :
+ 2769 8713 76 129 26 110 50 -86 395 11260 95
+ -----------------------------------------
+ DEME # 4
+ fitness =  11.25
+ best string :
+ 2779 8696 299 57 63 180 98 -54 395 17029 92
+ *****************************
+
+7)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.20  86.80    0.   0.  15.  10.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.80  87.30  359. 179.  89.  30.0   0.99  -0.50  3.99 200.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-n64i.dat
+# nsampl
+256
+# ns
+64
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 9
+
+ ITERATION N.  748
+ -----------------------------------------
+ DEME # 1
+ fitness =   18.
+ best string :
+ 2722 8692 10 65 76 300 63 -57 352 10519 63
+ -----------------------------------------
+ DEME # 2
+ fitness =   23.
+ best string :
+ 2778 8728 224 67 79 213 56 -72 386 18173 98
+ -----------------------------------------
+ DEME # 3
+ fitness =   17.
+ best string :
+ 2755 8725 26 109 88 294 59 -62 381 10174 99
+ -----------------------------------------
+ DEME # 4
+ fitness =   24.
+ best string :
+ 2766 8683 14 152 16 249 66 -71 354 8158 48
+ *****************************
+
+8)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+1000 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.00  86.80  235.   0.  20.   4.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.60  87.30  265. 179.  39.  34.0   0.99  -0.50  3.99 100.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-n64.dat
+# nsampl
+256
+# ns
+64
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  460
+ -----------------------------------------
+ DEME # 1
+ fitness =  19.
+ best string :
+ 2706 8680 241 106 29 336 53 -50 354 8317 81 (M 7.9 L 165.8 L+134.3 L-31.5)
+ -----------------------------------------
+ DEME # 2
+ fitness =  22.
+ best string :
+ 2700 8703 236 114 27 87 69 -50 364 9768 96
+ -----------------------------------------
+ DEME # 3
+ fitness =  19.
+ best string :
+ 2703 8685 258 149 32 51 52 -50 386 9947 86 (M=7.96 L = 177.9 L+=152.9 L-= 25)
+ -----------------------------------------
+ DEME # 4
+ fitness =  26.
+ best string :
+ 2701 8711 262 27 23 340 54 -52 385 9795 97
+ *****************************
+
+9)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+1000 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.10  86.70    0.   0.  18.  10.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.60  87.30  359. 179.  89.  40.0   0.99  -0.50  3.99 160.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-i55.dat
+# nsampl
+256
+# ns
+55
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 10
+
+ *****************************
+ ITERATION N.  207
+ -----------------------------------------
+ DEME # 1
+ fitness =   15.
+ best string :
+ 2723 8690 17 66 69 369 60 -53 391 8757 51
+ -----------------------------------------
+ DEME # 2
+ fitness =   16.
+ best string :
+ 2723 8679 9 70 77 395 69 -51 399 12325 66
+ -----------------------------------------
+ DEME # 3
+ fitness =   20.
+ best string :
+ 2760 8689 126 27 25 397 53 -60 396 13112 88
+ -----------------------------------------
+ DEME # 4
+ fitness =   22.
+ best string :
+ 2759 8681 177 91 36 320 58 -51 393 9948 45
+ *****************************
+
+10)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.00  86.80    0.   0.  20.   4.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.60  87.30  359. 179.  89.  40.0   0.99  -0.50  3.99 160.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+6
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-n55.dat
+# nsampl
+256
+# ns
+55
+#
+0
+#
+2 1
+#
+ 8.753 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  674
+ -----------------------------------------
+ DEME # 1
+ fitness =  11.5
+ best string :
+ 2722 8688 15 69 81 359 56 -60 362 8130 58
+ -----------------------------------------
+ DEME # 2
+ fitness =  13.5
+ best string :
+ 2736 8703 21 85 84 386 55 -61 368 11431 79
+ -----------------------------------------
+ DEME # 3
+ fitness =  17.5
+ best string :
+ 2707 8685 236 116 21 377 56 -51 357 9339 92
+ -----------------------------------------
+ DEME # 4
+ fitness =  15.5
+ best string :
+ 2733 8694 9 71 78 391 72 -72 377 8029 67
+ -----------------------------------------
+ *****************************
+
+11)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+1000 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.00  86.80    0.   0.  20.   4.0   0.50  -0.99  3.50  80.
+# come sopra valori massimi
+27.60  87.30  359. 179.  89.  40.0   0.99  -0.50  3.99 160.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+6
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-i55.dat
+# nsampl
+256
+# ns
+55
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  162
+ -----------------------------------------
+ DEME # 1
+ fitness =  34.
+ best string :
+ 2707 8681 249 104 41 400 95 -85 382 9792 23
+ -----------------------------------------
+ DEME # 2
+ fitness =  34.
+ best string :
+ 2710 8698 65 115 66 369 91 -95 388 8529 92
+ -----------------------------------------
+ DEME # 3
+ fitness =  38.
+ best string :
+ 2700 8724 60 104 63 378 89 -88 398 10827 98
+ -----------------------------------------
+ DEME # 4
+ fitness =  46.
+ best string :
+ 2709 8721 70 132 50 275 84 -92 357 8439 47
+ -----------------------------------------
+ DEME # 5
+ fitness =  37.
+ best string :
+ 2705 8680 75 118 81 325 97 -92 384 12112 85
+ -----------------------------------------
+ DEME # 6
+ fitness =  42.
+ best string :
+ 2700 8720 238 92 25 384 95 -97 353 10844 75
+ *****************************
+
+12)
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.00  86.70    0.   0.  25.   8.0   0.60  -0.99  3.60  80.
+# come sopra valori massimi
+27.40  87.20  359. 179.  89.  42.0   0.99  -0.50  3.99 110.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-i55.dat
+# nsampl
+256
+# ns
+55
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  1434
+ -----------------------------------------
+ DEME # 1
+ fitness =  30.
+ best string :
+ 2707 8690 69 118 68 399 98 -92 371 9307 15
+ -----------------------------------------
+ DEME # 2
+ fitness =  42.
+ best string :
+ 2706 8680 79 56 68 382 89 -99 361 9866 68
+ -----------------------------------------
+ DEME # 3
+ fitness =  33.
+ best string :
+ 2706 8675 245 100 39 417 96 -90 368 8220 22 (M 7.9 L 165 L+ 36.3 128.7)
+ -----------------------------------------
+ DEME # 4
+ fitness =  44.
+ best string :
+ 2727 8692 255 171 64 412 98 -95 389 9587 42
+ *****************************
+
+13)
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.08  86.78  236.  90.  32.  40.0   0.54  -0.59  3.90  95.
+# come sopra valori massimi
+27.12  87.81  239.  95.  34.  40.0   0.55  -0.52  3.94  97.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+1
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-n55.dat
+# nsampl
+256
+# ns
+55
+#
+0
+#
+2 1
+#
+8.753 0.393
+
+ *****************************
+ ITERATION N.  2000
+ -----------------------------------------
+ DEME # 1
+ fitness =  16.5
+ best string :
+ 2710 8679 238 91 32 400 54 -52 391 9531 91 (M 7.95 L=174.9 L+ 159.7 L- 15.2)
+ *****************************
+
+14)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+1000 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+26.90  86.68    0.   0.  20.   4.0   0.50  -0.99  3.60  70.
+# come sopra valori massimi
+27.35  87.38  359. 179.  89.  28.0   0.99  -0.50  3.95 140.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.089
+#file di input dati:
+bihar1934-i65.dat
+# nsampl
+256
+# ns
+65
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  426
+ -----------------------------------------
+ DEME # 1
+ fitness =  53.
+ best string :
+ 2698 8676 19 49 72 267 98 -95 392 13941 13
+ -----------------------------------------
+ DEME # 2
+ fitness =  44.
+ best string :
+ 2693 8712 69 106 67 273 87 -94 394 7567 96
+ -----------------------------------------
+ DEME # 3
+ fitness =  57.
+ best string :
+ 2720 8696 14 44 81 279 66 -97 391 10617 20
+ -----------------------------------------
+ DEME # 4
+ fitness =  58.
+ best string :
+ 2694 8672 1 156 51 267 99 -84 369 10683 15
+ *****************************
+
+15) legge 2 greca
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+26.90  86.60    0.   0.  25.   4.0   0.50  -0.99  3.50  85.
+# come sopra valori massimi
+27.40  87.20  359. 179.  89.  28.0   0.99  -0.50  3.99 185.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.088
+#file di input dati:
+bihar1934-i55.dat
+# nsampl
+256
+# ns
+55
+#
+0
+#
+2 1
+#
+6.01 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  1400
+ -----------------------------------------
+ DEME # 1
+ fitness =  31.
+ best string :
+ 2701 8703 75 132 59 274 67 -66 355 11632 39
+ -----------------------------------------
+ DEME # 2
+ fitness =  33.
+ best string :
+ 2714 8686 250 149 68 185 71 -82 370 11547 59 (M 8 L 185.1 L+109.2 L-75.9)
+ -----------------------------------------
+ DEME # 3
+ fitness =  30.
+ best string :
+ 2712 8706 79 142 89 267 57 -81 355 12972 63
+ -----------------------------------------
+ DEME # 4
+ fitness =  34.
+ best string :
+ 2710 8660 103 175 75 275 62 -51 399 10948 64
+ *****************************
+
+16)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+1000 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+27.10  86.60  234.  80.  30.  36.0   0.50  -0.55  3.90 85.
+# come sopra valori massimi
+27.60  87.10  242.  99.  36.  40.0   0.55  -0.50  3.99 100.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+1
+#rdistdeme (limite distanza demes)
+0.084
+#file di input dati:
+bihar1934-n55.dat
+# nsampl
+256
+# ns
+55
+#
+0
+#
+2 1
+#
+8.753 0.393
+#
+10 9 
+
+ *****************************
+ ITERATION N.  2001
+ -----------------------------------------
+ DEME # 1
+ fitness =  13.5
+ best string :
+ 2699 8678 230 87 36 511 53 -51 365 8385 57
+ -----------------------------------------
+ DEME # 2
+ fitness =  16.5
+ best string :
+ 2703 8669 241 102 35 418 56 -52 374 7709 88
+ -----------------------------------------
+ DEME # 3
+ fitness =  17.5
+ best string :
+ 2716 8675 231 80 30 417 59 -54 377 10944 94
+ -----------------------------------------
+ DEME # 4
+ fitness =  16.5
+ best string :
+ 2696 8673 230 88 30 392 58 -60 356 7739 6
+
+17)
+ *****************************
+ ITERATION N.  636
+ -----------------------------------------
+ DEME # 1
+ fitness =  13.5
+ best string :
+ 2702 8680 229 88 35 505 51 -50 368 8740 61
+ -----------------------------------------
+ DEME # 2
+ fitness =  13.5
+ best string :
+ 2699 8678 230 87 36 511 53 -51 365 8385 57
+
+18)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+26.95  86.68    0.   0.  20.   4.0   0.50  -0.99  3.50   1.
+# come sopra valori massimi
+27.25  87.28  359. 179.  89.  34.0   0.99  -0.50  3.99   5.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-i55.dat
+# nsampl
+256
+# ns
+55
+#
+0
+#
+1 1
+#
+#
+8.780 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  977
+ -----------------------------------------
+ DEME # 1
+ fitness =   20.
+ best string :
+ 2697 8695 265 13 78 337 66 -58 373 427 44
+ -----------------------------------------
+ DEME # 2
+ fitness =   19.
+ best string :
+ 2702 8689 56 107 62 202 72 -74 377 466 24
+ -----------------------------------------
+ DEME # 3
+ fitness =   19.
+ best string :
+ 2703 8695 72 108 46 337 87 -84 370 401 14
+ -----------------------------------------
+ DEME # 4
+ fitness =   19.
+ best string :
+ 2703 8701 156 123 72 298 71 -73 395 482 57
+ *****************************
+
+19)
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+500 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+26.95  86.68    0.   0.  20.   4.0   0.50  -0.99  3.50   1.
+# come sopra valori massimi
+27.25  87.28  359. 179.  89.  54.0   0.99  -0.50  3.99   5.
+# ireplace n. di individui da sostituire ogni generazione
+200
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.088
+#file di input dati:
+bihar1934-i55.dat
+# nsampl
+256
+# ns
+55
+#
+0
+#
+1 1
+#
+8.780 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  2001
+ -----------------------------------------
+ DEME # 1
+ fitness =   15.
+ best string :
+ 2700 8704 235 86 35 493 96 -82 361 346 34 
+ -----------------------------------------
+ DEME # 2
+ fitness =   16.
+ best string :
+ 2708 8677 211 90 40 538 68 -84 387 447 51
+ -----------------------------------------
+ DEME # 3
+ fitness =   13.
+ best string :
+ 2710 8695 50 102 51 526 95 -86 350 396 18
+ -----------------------------------------
+ DEME # 4
+ fitness =   13.
+ best string :
+ 2695 8710 292 63 36 519 69 -71 376 473 69
+
+20) Inversione su Interi e 55 dati
+# n. popolazione(per deme), n. iterazioni, seme gen. random :
+400 2000 333
+# elat,elon,prof,lpiu,lmen,machp,machm,vs,smo,strike,rake,dip (valori minimi):
+26.95  86.90    0.   0.  20.  10.0   0.50  -0.95  3.60  30.0
+# come sopra valori massimi
+27.05  87.20  359. 179.  89.  40.0   0.95  -0.50  3.95  99.0
+# ireplace n. di individui da sostituire ogni generazione
+160
+#ndemes (n. demes)
+4
+#rdistdeme (limite distanza demes)
+0.087
+#file di input dati:
+bihar1934-i55.dat
+# nsampl
+256
+# ns
+55
+#
+0
+#
+2 1#
+8.753 0.393
+#
+10 9
+
+ *****************************
+ ITERATION N.  2001
+ -----------------------------------------
+ DEME # 1
+ fitness =  15.0
+ best string :
+ 2701 8713 255 125 68 198 65 -53 376 4977 84
+ -----------------------------------------
+ DEME # 2
+ fitness =  17.0
+ best string :
+ 2704 8705 73 135 37 134 56 -54 386 5436 25
+ -----------------------------------------
+ DEME # 3
+ fitness =  16.0
+ best string :
+ 2705 8705 243 114 50 396 67 -56 388 6275 72
+ -----------------------------------------
+ DEME # 4
+ fitness =  18.0
+ best string :
+ 2703 8703 165 137 78 343 70 -80 390 4421 24
+
