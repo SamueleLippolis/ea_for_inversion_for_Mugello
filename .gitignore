@@ -217,7 +217,10 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Project data and papers
-/data/
-/papers/
-/fortran_code/
+# Keep project folders, but ignore their contents
+/data/*
+!/data/.gitkeep
+/papers/*
+!/papers/.gitkeep
+/fortran_code/*
+!/fortran_code/.gitkeep
