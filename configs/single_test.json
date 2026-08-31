@@ -1,0 +1,20 @@
+{
+  "data_file": "data/liv1846-n108.txt",
+  "intensity_law": 2,
+  "model": {
+    "latitude": 43.475,
+    "longitude": 10.55,
+    "strike": 349.5,
+    "rake": 79.5,
+    "dip": 45.0,
+    "depth": 9.0,
+    "length_plus": 13.0,
+    "length_minus": 13.0,
+    "mach_plus": 0.54,
+    "mach_minus": -0.54,
+    "s_velocity": 3.69,
+    "seismic_moment": 2.0e24,
+    "samples": 512,
+    "sampling_interval": 0.05
+  }
+}
