@@ -1,62 +1,74 @@
-# ea_for_inversion_for_Mugello
-Solving an inversion problem regarding seismic wases on two earthquakes: California and Mugello 
+# Earthquake forward model for the 1846 Colline Pisane event
 
-# Files description
+This project models the macroseismic intensities of the 14 August 1846
+Colline Pisane earthquake, whose strongest effects occurred around Orciano
+Pisano, between Pisa and Livorno.
 
-franco results 
-- AG.txt = file which cointains GA results
+The Python code is a deterministic translation of the calculation kernel in
+`fortran_code/pqu7v2.f`. It is a **forward model**: it receives one proposed
+earthquake-source model and calculates the intensity expected at every
+observation site. It then calculates the sum-of-squared differences between
+the predicted and observed intensities.
 
-fortran code 
-- pqu7v2.f = main code v2
-- pqu7v1.f = main code v1 (disused)
-- pgakfdeme9.f = GA code 
-- pgakf9.conf = support code file of the GAs
-- readat.f = subroutine (already in pqu7v1.f)
-- reaset.f = subroutine (already in pqu7v1.f)
+The Python implementation does not currently perform a complete inversion. A
+complete inversion would repeatedly change the source parameters and call the
+forward model to find the parameter set with the smallest misfit. The original
+Fortran files include genetic-algorithm code for that search.
 
-papers
-- BSSA-WiNa.pdf = paper 
-- BSSA-1737.pdf = paper 
+## Project structure
 
-data 
-- lib1846-n108.txt = data of 1846
-- set17.txt = ?  
+- `src/earthquake_forward_model/`: Python forward-model package.
+- `configs/`: source-model parameters and input-file selection.
+- `data/`: observed macroseismic intensities and original parameter ranges.
+- `scripts/`: commands for running the model and comparing Python with Fortran.
+- `tests/`: automated checks for the Python implementation.
+- `results/`: CSV output produced by the forward model.
+- `fortran_code/`: original Fortran model and genetic-algorithm code.
+- `fortran_results/`: results produced by the original Fortran workflow.
+- `papers/`: scientific reference papers.
 
-## Python single-model inversion
+## Run the forward model
 
-The deterministic inversion kernel from `fortran_code/pqu7v2.f` is available
-in `src/mugello_inversion`. The original Fortran files are kept unchanged.
-There is no PSO, GA, or Monte Carlo loop: the script evaluates exactly one
-source model, computes predicted macroseismic intensities, and reports the
-sum-of-squared residuals.
-
-Run the included Mugello test model (the midpoint of the ranges in `set17.txt`):
+The included configuration uses the midpoint of the parameter ranges in
+`data/set17.txt`:
 
 ```bash
-python3 scripts/run_single_inversion.py
+python3 scripts/run_forward_model.py
 ```
 
-Results are written to `results/single_test.csv`. Edit
-`configs/single_test.json` or pass another JSON file with `--config` to test a
-different model. Run the dependency-free test suite with:
+The command reads `configs/colline_pisane_forward_model.json` and writes
+`results/colline_pisane_forward_model.csv`. Pass another JSON file with
+`--config`, or another output location with `--output`, when needed.
+
+Each output row contains the location, observed intensity, predicted intensity,
+station distance, and calculated peak kinematic value.
+
+## Run the tests
+
+The test suite has no external Python dependencies:
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
 
-### Compare Python with the original Fortran
+## Compare Python with the original Fortran
 
-If `gfortran` is installed, the parity script compiles the original Fortran
-kernel in a temporary directory and evaluates the same fixed model in both
-languages:
+If `gfortran` is installed, run:
 
 ```bash
 python3 scripts/compare_fortran_python.py
 ```
 
-It compares all 108 predicted intensities, the sum-of-squares residual, station
-distances, and intermediate kinematic-function values. It exits with status 0
-only when the comparison passes. The original `fortran_code/` directory is
-read-only during this process; the temporary executable and extracted kernel
-are automatically removed.
+The script compiles the original Fortran calculation kernel in a temporary
+directory and evaluates the same source model in both languages. It compares
+all predicted intensities, the residual, station distances, and intermediate
+kinematic values. It exits successfully only when the implementations agree.
+The original `fortran_code/` directory is not modified.
 
+## Important Python names
+
+- `SourceModelParameters`: parameters describing one proposed earthquake source.
+- `IntensityObservation`: one observed intensity and its geographic location.
+- `evaluate_forward_model()`: predicts intensities for one source model.
+- `ForwardModelResult`: predicted values, distances, and total misfit.
+- `load_intensity_observations()`: reads the observation data file.

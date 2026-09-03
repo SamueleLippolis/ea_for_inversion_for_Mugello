@@ -15,7 +15,11 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from mugello_inversion import ModelParameters, evaluate_model, load_observations
+from earthquake_forward_model import (
+    SourceModelParameters,
+    evaluate_forward_model,
+    load_intensity_observations,
+)
 
 
 FORTRAN_PARAMETER_ORDER = (
@@ -26,7 +30,7 @@ FORTRAN_PARAMETER_ORDER = (
 )
 
 
-def extract_kernel(source: Path, destination: Path) -> None:
+def extract_fortran_kernel(source: Path, destination: Path) -> None:
     """Remove only the original main program, retaining its subroutines."""
     lines = source.read_text().splitlines(keepends=True)
     marker = next(i for i, line in enumerate(lines)
@@ -34,7 +38,7 @@ def extract_kernel(source: Path, destination: Path) -> None:
     destination.write_text("".join(lines[marker:]))
 
 
-def read_reference(path: Path):
+def read_fortran_results(path: Path):
     lines = path.read_text().splitlines()
     summary = lines[0].split()
     count, residual = int(summary[2]), float(summary[3])
@@ -49,7 +53,9 @@ def read_reference(path: Path):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", type=Path, default=ROOT / "configs/single_test.json")
+    parser.add_argument(
+        "--config", type=Path,
+        default=ROOT / "configs/colline_pisane_forward_model.json")
     parser.add_argument("--compiler", default="gfortran")
     parser.add_argument("--rtol", type=float, default=2e-4,
                         help="relative tolerance for single-precision Fortran values")
@@ -63,23 +69,23 @@ def main() -> int:
         return 2
 
     config = json.loads(args.config.read_text())
-    model = ModelParameters(**config["model"])
+    model = SourceModelParameters(**config["model"])
     data_path = Path(config["data_file"])
     if not data_path.is_absolute():
         data_path = ROOT / data_path
-    observations = load_observations(data_path)
-    python_result = evaluate_model(model, observations,
-                                   intensity_law=config.get("intensity_law", 2))
+    observations = load_intensity_observations(data_path)
+    python_result = evaluate_forward_model(
+        model, observations, intensity_law=config.get("intensity_law", 2))
     if config.get("intensity_law", 2) != 2:
         print("error: reference driver currently compares Fortran intensity law 2", file=sys.stderr)
         return 2
 
-    with tempfile.TemporaryDirectory(prefix="mugello-parity-") as temporary:
+    with tempfile.TemporaryDirectory(prefix="forward-model-parity-") as temporary:
         build = Path(temporary)
         kernel = build / "pqu7_kernel.f"
         executable = build / "fortran_reference"
         output = build / "reference.txt"
-        extract_kernel(ROOT / "fortran_code/pqu7v2.f", kernel)
+        extract_fortran_kernel(ROOT / "fortran_code/pqu7v2.f", kernel)
         subprocess.run([
             compiler, "-O0", "-std=legacy", "-ffixed-line-length-none",
             str(ROOT / "scripts/fortran_reference_driver.f"), str(kernel),
@@ -91,7 +97,7 @@ def main() -> int:
             values.append("0" if name is None else str(model_dict[name]))
         subprocess.run([str(executable), str(data_path), str(output), *values], check=True,
                        cwd=ROOT)
-        f_residual, f_predicted, f_distances, f_kf = read_reference(output)
+        f_residual, f_predicted, f_distances, f_kf = read_fortran_results(output)
 
     intensity_mismatches = [i for i, (py, ft) in enumerate(
         zip(python_result.predicted_intensities, f_predicted), 1) if py != ft]
