@@ -220,6 +220,10 @@ def _calculate_peak_kinematic_value(model: SourceModelParameters, distance: floa
         t1 = t1_raw * unit1
         while k2 + 1 < len(second) and second[k2][0]*unit2 - t1 < -dt2/2:
             k2 += 1
+        # Fortran stops combining samples when the second rupture reaches its
+        # end marker; it does not keep reusing the last nonzero sample.
+        if second[k2][0]*unit2 - t1 < -dt2/2:
+            break
         y2 = second[k2][1]
         east = (y1[0]+y1[2])/unit1 + (y2[0]+y2[2])/unit2
         north = (y1[1]+y1[3])/unit1 + (y2[1]+y2[3])/unit2

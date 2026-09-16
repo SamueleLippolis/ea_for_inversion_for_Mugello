@@ -51,11 +51,32 @@ def read_fortran_results(path: Path):
     return residual, predicted, distances, kf_values
 
 
+def load_sources(path: Path, baseline: dict) -> list[tuple[str, dict]]:
+    """Combine the configured source with named parameter variations."""
+    sources = [("configured", baseline)]
+    seen = {"configured"}
+    for entry in json.loads(path.read_text()):
+        name = entry["name"]
+        changes = entry["model"]
+        if not isinstance(name, str) or not name or name in seen:
+            raise ValueError(f"source names must be nonempty and unique: {name!r}")
+        unknown = changes.keys() - baseline.keys()
+        if unknown:
+            raise ValueError(f"{name}: unknown model parameters: {sorted(unknown)}")
+        sources.append((name, {**baseline, **changes}))
+        seen.add(name)
+    return sources
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--config", type=Path,
         default=ROOT / "configs/colline_pisane_forward_model.json")
+    parser.add_argument(
+        "--sources", type=Path,
+        default=ROOT / "configs/forward_comparison_sources.json",
+        help="JSON list of named model variations to compare after the configured source")
     parser.add_argument("--compiler", default="gfortran")
     parser.add_argument("--rtol", type=float, default=2e-4,
                         help="relative tolerance for single-precision Fortran values")
@@ -69,13 +90,11 @@ def main() -> int:
         return 2
 
     config = json.loads(args.config.read_text())
-    model = SourceModelParameters(**config["model"])
+    sources = load_sources(args.sources, config["model"])
     data_path = Path(config["data_file"])
     if not data_path.is_absolute():
         data_path = ROOT / data_path
     observations = load_intensity_observations(data_path)
-    python_result = evaluate_forward_model(
-        model, observations, intensity_law=config.get("intensity_law", 2))
     if config.get("intensity_law", 2) != 2:
         print("error: reference driver currently compares Fortran intensity law 2", file=sys.stderr)
         return 2
@@ -91,34 +110,49 @@ def main() -> int:
             str(ROOT / "scripts/fortran_reference_driver.f"), str(kernel),
             "-o", str(executable),
         ], check=True)
-        values = []
-        model_dict = config["model"]
-        for name in FORTRAN_PARAMETER_ORDER:
-            values.append("0" if name is None else str(model_dict[name]))
-        subprocess.run([str(executable), str(data_path), str(output), *values], check=True,
-                       cwd=ROOT)
-        f_residual, f_predicted, f_distances, f_kf = read_fortran_results(output)
+        all_passed = True
+        for name, model_dict in sources:
+            model = SourceModelParameters(**model_dict)
+            python_result = evaluate_forward_model(model, observations, intensity_law=2)
+            values = ["0" if parameter is None else str(model_dict[parameter])
+                      for parameter in FORTRAN_PARAMETER_ORDER]
+            subprocess.run([str(executable), str(data_path), str(output), *values],
+                           check=True, cwd=ROOT, capture_output=True)
+            f_residual, f_predicted, f_distances, f_kf = read_fortran_results(output)
+            if len(f_predicted) != len(observations):
+                raise RuntimeError(f"{name}: Fortran returned {len(f_predicted)} sites; "
+                                   f"Python used {len(observations)}")
+            intensity_mismatches = [i for i, (py, ft) in enumerate(
+                zip(python_result.predicted_intensities, f_predicted), 1) if py != ft]
+            distance_errors = [abs(py-ft) for py, ft in
+                               zip(python_result.distances_km, f_distances)]
+            kf_mismatches = [i for i, (py, ft) in enumerate(
+                zip(python_result.kinematic_values, f_kf), 1)
+                if not math.isclose(py, ft, rel_tol=args.rtol, abs_tol=1e-7)]
+            passed = (python_result.residual == f_residual and not intensity_mismatches
+                      and not kf_mismatches and max(distance_errors) <= args.distance_tol)
+            all_passed &= passed
+            print(f"{name}: {'PASS' if passed else 'FAIL'} "
+                  f"({len(observations)} sites, residual Python={python_result.residual:.0f} "
+                  f"Fortran={f_residual:.0f}, intensity mismatches={len(intensity_mismatches)}, "
+                  f"KF mismatches={len(kf_mismatches)}, "
+                  f"max distance difference={max(distance_errors):.6g} km)")
+            if intensity_mismatches:
+                for site in intensity_mismatches[:10]:
+                    print(f"  site {site} intensity: Python="
+                          f"{python_result.predicted_intensities[site-1]} "
+                          f"Fortran={f_predicted[site-1]}")
+            if kf_mismatches:
+                for site in kf_mismatches[:10]:
+                    py, ft = python_result.kinematic_values[site-1], f_kf[site-1]
+                    print(f"  site {site} KF: Python={py:.9g} Fortran={ft:.9g} "
+                          f"relative difference={abs(py-ft)/max(abs(py), abs(ft)):.3g}")
 
-    intensity_mismatches = [i for i, (py, ft) in enumerate(
-        zip(python_result.predicted_intensities, f_predicted), 1) if py != ft]
-    distance_errors = [abs(py-ft) for py, ft in zip(python_result.distances_km, f_distances)]
-    kf_mismatches = [i for i, (py, ft) in enumerate(
-        zip(python_result.kinematic_values, f_kf), 1)
-        if not math.isclose(py, ft, rel_tol=args.rtol, abs_tol=1e-7)]
-
-    print(f"sites compared: {len(observations)}")
-    print(f"residual: Python={python_result.residual:.0f}, Fortran={f_residual:.0f}")
-    print(f"predicted-intensity mismatches: {len(intensity_mismatches)}")
-    print(f"KF mismatches (rtol={args.rtol:g}): {len(kf_mismatches)}")
-    print(f"maximum distance difference: {max(distance_errors):.6g} km")
-    if intensity_mismatches:
-        print(f"first intensity mismatch sites: {intensity_mismatches[:10]}")
-    if kf_mismatches:
-        print(f"first KF mismatch sites: {kf_mismatches[:10]}")
-    passed = (python_result.residual == f_residual and not intensity_mismatches
-              and not kf_mismatches and max(distance_errors) <= args.distance_tol)
-    print("PARITY CHECK: " + ("PASS" if passed else "FAIL"))
-    return 0 if passed else 1
+    source_label = "source" if len(sources) == 1 else "sources"
+    print(f"PARITY CHECK: {'PASS' if all_passed else 'FAIL'} "
+          f"({len(sources)} {source_label}, "
+          f"{len(sources) * len(observations)} site predictions)")
+    return 0 if all_passed else 1
 
 
 if __name__ == "__main__":

@@ -1,0 +1,70 @@
+[
+  {
+    "name": "lower bounds",
+    "model": {
+      "latitude": 43.45,
+      "longitude": 10.50,
+      "strike": 340,
+      "rake": 70,
+      "dip": 40,
+      "depth": 8,
+      "length_plus": 10,
+      "length_minus": 10,
+      "mach_plus": 0.50,
+      "mach_minus": -0.50,
+      "s_velocity": 3.66,
+      "seismic_moment": 1e24
+    }
+  },
+  {
+    "name": "upper bounds",
+    "model": {
+      "latitude": 43.50,
+      "longitude": 10.60,
+      "strike": 359,
+      "rake": 89,
+      "dip": 50,
+      "depth": 10,
+      "length_plus": 16,
+      "length_minus": 16,
+      "mach_plus": 0.58,
+      "mach_minus": -0.58,
+      "s_velocity": 3.72,
+      "seismic_moment": 3e24
+    }
+  },
+  {
+    "name": "mixed bounds A",
+    "model": {
+      "latitude": 43.45,
+      "longitude": 10.60,
+      "strike": 359,
+      "rake": 70,
+      "dip": 50,
+      "depth": 8,
+      "length_plus": 16,
+      "length_minus": 10,
+      "mach_plus": 0.58,
+      "mach_minus": -0.50,
+      "s_velocity": 3.72,
+      "seismic_moment": 1e24
+    }
+  },
+  {
+    "name": "mixed bounds B",
+    "model": {
+      "latitude": 43.50,
+      "longitude": 10.50,
+      "strike": 340,
+      "rake": 89,
+      "dip": 40,
+      "depth": 10,
+      "length_plus": 10,
+      "length_minus": 16,
+      "mach_plus": 0.50,
+      "mach_minus": -0.58,
+      "s_velocity": 3.66,
+      "seismic_moment": 3e24
+    }
+  }
+]

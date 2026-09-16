@@ -27,6 +27,15 @@ class ForwardModelTest(unittest.TestCase):
         self.assertTrue(all(1 <= value <= 11 for value in result.predicted_intensities))
         self.assertTrue(all(value >= 0 for value in result.kinematic_values))
 
+    def test_second_rupture_end_marker_matches_fortran(self):
+        # Mixed bounds A, site 8: the second rupture ends before the first.
+        model = SourceModelParameters(43.45, 10.60, 359, 70, 50, 8,
+                                      16, 10, 0.58, -0.50, 3.72, 1e24)
+        site = load_intensity_observations(ROOT / "data/liv1846-n108.txt")[7]
+        result = evaluate_forward_model(model, (site,))
+        self.assertTrue(math.isclose(result.kinematic_values[0], 0.108823344,
+                                      rel_tol=2e-4))
+
 
 if __name__ == "__main__":
     unittest.main()

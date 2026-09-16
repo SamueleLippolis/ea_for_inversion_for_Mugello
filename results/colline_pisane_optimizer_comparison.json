@@ -1,0 +1,165 @@
+{
+  "ga_nga_report": "/home/samuele/projects/ea_for_inversion_for_Mugello/results/colline_pisane_ga_nga.json",
+  "pso_report": "/home/samuele/projects/ea_for_inversion_for_Mugello/results/colline_pisane_pso.json",
+  "data_file": "/home/samuele/projects/ea_for_inversion_for_Mugello/data/liv1846-n108.txt",
+  "site_count": 108,
+  "intensity_law": 2,
+  "same_problem": true,
+  "ga_nga_search": {
+    "seed": 333,
+    "population_size": 24,
+    "generations_per_stage": 20,
+    "demes": 2,
+    "unique_forward_evaluations": 369
+  },
+  "pso_search": {
+    "seed": 333,
+    "swarm_size": 24,
+    "iterations": 20,
+    "unique_forward_evaluations": 504
+  },
+  "ranked_solutions": [
+    {
+      "algorithm": "PSO",
+      "run_or_deme": 1,
+      "residual": 108.0,
+      "model": {
+        "latitude": 43.47,
+        "longitude": 10.56,
+        "strike": 347.0,
+        "rake": 73.0,
+        "dip": 44.0,
+        "depth": 9.3,
+        "length_plus": 12.7,
+        "length_minus": 15.8,
+        "mach_plus": 0.56,
+        "mach_minus": -0.55,
+        "s_velocity": 3.68,
+        "seismic_moment": 2.03e+24,
+        "samples": 512,
+        "sampling_interval": 0.05
+      }
+    },
+    {
+      "algorithm": "NGA",
+      "run_or_deme": 1,
+      "residual": 118.0,
+      "model": {
+        "latitude": 43.47,
+        "longitude": 10.57,
+        "strike": 344.0,
+        "rake": 77.0,
+        "dip": 48.0,
+        "depth": 9.3,
+        "length_plus": 14.1,
+        "length_minus": 15.6,
+        "mach_plus": 0.58,
+        "mach_minus": -0.51,
+        "s_velocity": 3.7,
+        "seismic_moment": 1.83e+24,
+        "samples": 512,
+        "sampling_interval": 0.05
+      }
+    },
+    {
+      "algorithm": "NGA",
+      "run_or_deme": 2,
+      "residual": 123.0,
+      "model": {
+        "latitude": 43.47,
+        "longitude": 10.58,
+        "strike": 349.0,
+        "rake": 76.0,
+        "dip": 49.0,
+        "depth": 9.4,
+        "length_plus": 15.6,
+        "length_minus": 15.3,
+        "mach_plus": 0.57,
+        "mach_minus": -0.54,
+        "s_velocity": 3.72,
+        "seismic_moment": 2.13e+24,
+        "samples": 512,
+        "sampling_interval": 0.05
+      }
+    },
+    {
+      "algorithm": "GA",
+      "run_or_deme": 1,
+      "residual": 125.0,
+      "model": {
+        "latitude": 43.45,
+        "longitude": 10.54,
+        "strike": 355.0,
+        "rake": 77.0,
+        "dip": 41.0,
+        "depth": 9.5,
+        "length_plus": 15.7,
+        "length_minus": 12.1,
+        "mach_plus": 0.56,
+        "mach_minus": -0.57,
+        "s_velocity": 3.69,
+        "seismic_moment": 2.48e+24,
+        "samples": 512,
+        "sampling_interval": 0.05
+      }
+    }
+  ],
+  "best_ga_nga": {
+    "algorithm": "NGA",
+    "run_or_deme": 1,
+    "residual": 118.0,
+    "model": {
+      "latitude": 43.47,
+      "longitude": 10.57,
+      "strike": 344.0,
+      "rake": 77.0,
+      "dip": 48.0,
+      "depth": 9.3,
+      "length_plus": 14.1,
+      "length_minus": 15.6,
+      "mach_plus": 0.58,
+      "mach_minus": -0.51,
+      "s_velocity": 3.7,
+      "seismic_moment": 1.83e+24,
+      "samples": 512,
+      "sampling_interval": 0.05
+    }
+  },
+  "best_pso": {
+    "algorithm": "PSO",
+    "run_or_deme": 1,
+    "residual": 108.0,
+    "model": {
+      "latitude": 43.47,
+      "longitude": 10.56,
+      "strike": 347.0,
+      "rake": 73.0,
+      "dip": 44.0,
+      "depth": 9.3,
+      "length_plus": 12.7,
+      "length_minus": 15.8,
+      "mach_plus": 0.56,
+      "mach_minus": -0.55,
+      "s_velocity": 3.68,
+      "seismic_moment": 2.03e+24,
+      "samples": 512,
+      "sampling_interval": 0.05
+    }
+  },
+  "pso_minus_ga_nga_residual": -10.0,
+  "pso_minus_ga_nga_parameters": {
+    "latitude": 0.0,
+    "longitude": -0.009999999999999787,
+    "strike": 3.0,
+    "rake": -4.0,
+    "dip": -4.0,
+    "depth": 0.0,
+    "length_plus": -1.4000000000000004,
+    "length_minus": 0.20000000000000107,
+    "mach_plus": -0.019999999999999907,
+    "mach_minus": -0.040000000000000036,
+    "s_velocity": -0.020000000000000018,
+    "seismic_moment": 2.0000000000000005e+23
+  },
+  "normalized_best_source_distance": 0.19320175438596476
+}

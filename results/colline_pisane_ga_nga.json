@@ -1,0 +1,456 @@
+{
+  "configuration": "/home/samuele/projects/ea_for_inversion_for_Mugello/configs/colline_pisane_ga_nga.json",
+  "data_file": "/home/samuele/projects/ea_for_inversion_for_Mugello/data/liv1846-n108.txt",
+  "seed": 333,
+  "population_size": 24,
+  "generations_per_stage": 20,
+  "replacement_count": 5,
+  "restart_after": 10,
+  "demes": 2,
+  "niche_radius": 0.085,
+  "unique_forward_evaluations": 369,
+  "ga": [
+    {
+      "deme": 1,
+      "residual": 125.0,
+      "model": {
+        "latitude": 43.45,
+        "longitude": 10.54,
+        "strike": 355.0,
+        "rake": 77.0,
+        "dip": 41.0,
+        "depth": 9.5,
+        "length_plus": 15.7,
+        "length_minus": 12.1,
+        "mach_plus": 0.56,
+        "mach_minus": -0.57,
+        "s_velocity": 3.69,
+        "seismic_moment": 2.48e+24,
+        "samples": 512,
+        "sampling_interval": 0.05
+      }
+    }
+  ],
+  "nga": [
+    {
+      "deme": 1,
+      "residual": 118.0,
+      "model": {
+        "latitude": 43.47,
+        "longitude": 10.57,
+        "strike": 344.0,
+        "rake": 77.0,
+        "dip": 48.0,
+        "depth": 9.3,
+        "length_plus": 14.1,
+        "length_minus": 15.6,
+        "mach_plus": 0.58,
+        "mach_minus": -0.51,
+        "s_velocity": 3.7,
+        "seismic_moment": 1.83e+24,
+        "samples": 512,
+        "sampling_interval": 0.05
+      }
+    },
+    {
+      "deme": 2,
+      "residual": 123.0,
+      "model": {
+        "latitude": 43.47,
+        "longitude": 10.58,
+        "strike": 349.0,
+        "rake": 76.0,
+        "dip": 49.0,
+        "depth": 9.4,
+        "length_plus": 15.6,
+        "length_minus": 15.3,
+        "mach_plus": 0.57,
+        "mach_minus": -0.54,
+        "s_velocity": 3.72,
+        "seismic_moment": 2.13e+24,
+        "samples": 512,
+        "sampling_interval": 0.05
+      }
+    }
+  ],
+  "history": [
+    {
+      "stage": "GA",
+      "generation": 0,
+      "deme": 1,
+      "best_residual": 138.0
+    },
+    {
+      "stage": "GA",
+      "generation": 1,
+      "deme": 1,
+      "best_residual": 138.0
+    },
+    {
+      "stage": "GA",
+      "generation": 2,
+      "deme": 1,
+      "best_residual": 138.0
+    },
+    {
+      "stage": "GA",
+      "generation": 3,
+      "deme": 1,
+      "best_residual": 138.0
+    },
+    {
+      "stage": "GA",
+      "generation": 4,
+      "deme": 1,
+      "best_residual": 138.0
+    },
+    {
+      "stage": "GA",
+      "generation": 5,
+      "deme": 1,
+      "best_residual": 138.0
+    },
+    {
+      "stage": "GA",
+      "generation": 6,
+      "deme": 1,
+      "best_residual": 138.0
+    },
+    {
+      "stage": "GA",
+      "generation": 7,
+      "deme": 1,
+      "best_residual": 134.0
+    },
+    {
+      "stage": "GA",
+      "generation": 8,
+      "deme": 1,
+      "best_residual": 134.0
+    },
+    {
+      "stage": "GA",
+      "generation": 9,
+      "deme": 1,
+      "best_residual": 133.0
+    },
+    {
+      "stage": "GA",
+      "generation": 10,
+      "deme": 1,
+      "best_residual": 133.0
+    },
+    {
+      "stage": "GA",
+      "generation": 11,
+      "deme": 1,
+      "best_residual": 133.0
+    },
+    {
+      "stage": "GA",
+      "generation": 12,
+      "deme": 1,
+      "best_residual": 130.0
+    },
+    {
+      "stage": "GA",
+      "generation": 13,
+      "deme": 1,
+      "best_residual": 130.0
+    },
+    {
+      "stage": "GA",
+      "generation": 14,
+      "deme": 1,
+      "best_residual": 126.0
+    },
+    {
+      "stage": "GA",
+      "generation": 15,
+      "deme": 1,
+      "best_residual": 126.0
+    },
+    {
+      "stage": "GA",
+      "generation": 16,
+      "deme": 1,
+      "best_residual": 126.0
+    },
+    {
+      "stage": "GA",
+      "generation": 17,
+      "deme": 1,
+      "best_residual": 126.0
+    },
+    {
+      "stage": "GA",
+      "generation": 18,
+      "deme": 1,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "GA",
+      "generation": 19,
+      "deme": 1,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "GA",
+      "generation": 20,
+      "deme": 1,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 0,
+      "deme": 1,
+      "best_residual": 134.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 0,
+      "deme": 2,
+      "best_residual": 144.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 1,
+      "deme": 1,
+      "best_residual": 134.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 1,
+      "deme": 2,
+      "best_residual": 144.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 2,
+      "deme": 1,
+      "best_residual": 134.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 2,
+      "deme": 2,
+      "best_residual": 144.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 3,
+      "deme": 1,
+      "best_residual": 134.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 3,
+      "deme": 2,
+      "best_residual": 144.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 4,
+      "deme": 1,
+      "best_residual": 134.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 4,
+      "deme": 2,
+      "best_residual": 127.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 5,
+      "deme": 1,
+      "best_residual": 132.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 5,
+      "deme": 2,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 6,
+      "deme": 1,
+      "best_residual": 132.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 6,
+      "deme": 2,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 7,
+      "deme": 1,
+      "best_residual": 132.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 7,
+      "deme": 2,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 8,
+      "deme": 1,
+      "best_residual": 129.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 8,
+      "deme": 2,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 9,
+      "deme": 1,
+      "best_residual": 129.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 9,
+      "deme": 2,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 10,
+      "deme": 1,
+      "best_residual": 129.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 10,
+      "deme": 2,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 11,
+      "deme": 1,
+      "best_residual": 129.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 11,
+      "deme": 2,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 12,
+      "deme": 1,
+      "best_residual": 129.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 12,
+      "deme": 2,
+      "best_residual": 125.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 13,
+      "deme": 1,
+      "best_residual": 129.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 13,
+      "deme": 2,
+      "best_residual": 124.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 14,
+      "deme": 1,
+      "best_residual": 129.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 14,
+      "deme": 2,
+      "best_residual": 124.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 15,
+      "deme": 1,
+      "best_residual": 124.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 15,
+      "deme": 2,
+      "best_residual": 124.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 16,
+      "deme": 1,
+      "best_residual": 119.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 16,
+      "deme": 2,
+      "best_residual": 124.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 17,
+      "deme": 1,
+      "best_residual": 119.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 17,
+      "deme": 2,
+      "best_residual": 123.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 18,
+      "deme": 1,
+      "best_residual": 119.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 18,
+      "deme": 2,
+      "best_residual": 123.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 19,
+      "deme": 1,
+      "best_residual": 119.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 19,
+      "deme": 2,
+      "best_residual": 123.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 20,
+      "deme": 1,
+      "best_residual": 118.0
+    },
+    {
+      "stage": "NGA",
+      "generation": 20,
+      "deme": 2,
+      "best_residual": 123.0
+    }
+  ]
+}

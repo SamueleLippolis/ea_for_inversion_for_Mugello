@@ -1,0 +1,141 @@
+{
+  "configuration": "/home/samuele/projects/ea_for_inversion_for_Mugello/configs/colline_pisane_pso.json",
+  "data_file": "/home/samuele/projects/ea_for_inversion_for_Mugello/data/liv1846-n108.txt",
+  "seed": 333,
+  "swarm_size": 24,
+  "iterations": 20,
+  "inertia_weight": 0.7,
+  "cognitive_weight": 1.5,
+  "social_weight": 1.5,
+  "maximum_velocity_fraction": 0.2,
+  "unique_forward_evaluations": 504,
+  "pso": [
+    {
+      "run": 1,
+      "residual": 108.0,
+      "model": {
+        "latitude": 43.47,
+        "longitude": 10.56,
+        "strike": 347.0,
+        "rake": 73.0,
+        "dip": 44.0,
+        "depth": 9.3,
+        "length_plus": 12.7,
+        "length_minus": 15.8,
+        "mach_plus": 0.56,
+        "mach_minus": -0.55,
+        "s_velocity": 3.68,
+        "seismic_moment": 2.03e+24,
+        "samples": 512,
+        "sampling_interval": 0.05
+      }
+    }
+  ],
+  "history": [
+    {
+      "stage": "PSO",
+      "iteration": 0,
+      "best_residual": 137.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 1,
+      "best_residual": 132.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 2,
+      "best_residual": 119.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 3,
+      "best_residual": 117.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 4,
+      "best_residual": 109.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 5,
+      "best_residual": 109.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 6,
+      "best_residual": 109.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 7,
+      "best_residual": 109.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 8,
+      "best_residual": 109.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 9,
+      "best_residual": 109.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 10,
+      "best_residual": 109.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 11,
+      "best_residual": 109.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 12,
+      "best_residual": 109.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 13,
+      "best_residual": 109.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 14,
+      "best_residual": 108.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 15,
+      "best_residual": 108.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 16,
+      "best_residual": 108.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 17,
+      "best_residual": 108.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 18,
+      "best_residual": 108.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 19,
+      "best_residual": 108.0
+    },
+    {
+      "stage": "PSO",
+      "iteration": 20,
+      "best_residual": 108.0
+    }
+  ]
+}

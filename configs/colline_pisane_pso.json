@@ -1,0 +1,24 @@
+{
+  "forward_config": "configs/colline_pisane_forward_model.json",
+  "seed": 333,
+  "swarm_size": 24,
+  "iterations": 20,
+  "inertia_weight": 0.7,
+  "cognitive_weight": 1.5,
+  "social_weight": 1.5,
+  "maximum_velocity_fraction": 0.2,
+  "bounds": {
+    "latitude": {"lower": 43.45, "upper": 43.50, "step": 0.01},
+    "longitude": {"lower": 10.50, "upper": 10.60, "step": 0.01},
+    "strike": {"lower": 340, "upper": 359, "step": 1},
+    "rake": {"lower": 70, "upper": 89, "step": 1},
+    "dip": {"lower": 40, "upper": 50, "step": 1},
+    "depth": {"lower": 8, "upper": 10, "step": 0.1},
+    "length_plus": {"lower": 10, "upper": 16, "step": 0.1},
+    "length_minus": {"lower": 10, "upper": 16, "step": 0.1},
+    "mach_plus": {"lower": 0.50, "upper": 0.58, "step": 0.01},
+    "mach_minus": {"lower": -0.58, "upper": -0.50, "step": 0.01},
+    "s_velocity": {"lower": 3.66, "upper": 3.72, "step": 0.01},
+    "seismic_moment": {"lower": 1e24, "upper": 3e24, "step": 1e22}
+  }
+}
