@@ -78,6 +78,10 @@ def main() -> int:
         default=ROOT / "configs/forward_comparison_sources.json",
         help="JSON list of named model variations to compare after the configured source")
     parser.add_argument("--compiler", default="gfortran")
+    parser.add_argument(
+        "--output", type=Path,
+        default=ROOT / "results/colline_pisane_fortran_python_comparison.json",
+        help="path for the JSON comparison report")
     parser.add_argument("--rtol", type=float, default=2e-4,
                         help="relative tolerance for single-precision Fortran values")
     parser.add_argument("--distance-tol", type=float, default=2e-3,
@@ -99,6 +103,7 @@ def main() -> int:
         print("error: reference driver currently compares Fortran intensity law 2", file=sys.stderr)
         return 2
 
+    comparisons = []
     with tempfile.TemporaryDirectory(prefix="forward-model-parity-") as temporary:
         build = Path(temporary)
         kernel = build / "pqu7_kernel.f"
@@ -132,6 +137,33 @@ def main() -> int:
             passed = (python_result.residual == f_residual and not intensity_mismatches
                       and not kf_mismatches and max(distance_errors) <= args.distance_tol)
             all_passed &= passed
+            sites = [{
+                "site": i,
+                "observed_intensity": observation.intensity,
+                "python_intensity": py_intensity,
+                "fortran_intensity": ft_intensity,
+                "python_distance_km": py_distance,
+                "fortran_distance_km": ft_distance,
+                "python_kf": py_kf,
+                "fortran_kf": ft_kf,
+                "kf_within_tolerance": math.isclose(
+                    py_kf, ft_kf, rel_tol=args.rtol, abs_tol=1e-7),
+            } for i, (observation, py_intensity, ft_intensity, py_distance,
+                      ft_distance, py_kf, ft_kf) in enumerate(zip(
+                          observations, python_result.predicted_intensities,
+                          f_predicted, python_result.distances_km, f_distances,
+                          python_result.kinematic_values, f_kf), 1)]
+            comparisons.append({
+                "name": name,
+                "model": model_dict,
+                "python_residual": python_result.residual,
+                "fortran_residual": f_residual,
+                "intensity_mismatch_sites": intensity_mismatches,
+                "kf_mismatch_sites": kf_mismatches,
+                "maximum_distance_difference_km": max(distance_errors),
+                "full_parity": passed,
+                "sites": sites,
+            })
             print(f"{name}: {'PASS' if passed else 'FAIL'} "
                   f"({len(observations)} sites, residual Python={python_result.residual:.0f} "
                   f"Fortran={f_residual:.0f}, intensity mismatches={len(intensity_mismatches)}, "
@@ -147,6 +179,21 @@ def main() -> int:
                     py, ft = python_result.kinematic_values[site-1], f_kf[site-1]
                     print(f"  site {site} KF: Python={py:.9g} Fortran={ft:.9g} "
                           f"relative difference={abs(py-ft)/max(abs(py), abs(ft)):.3g}")
+
+    report = {
+        "comparison_type": "Python and Fortran forward models",
+        "config_file": str(args.config),
+        "sources_file": str(args.sources),
+        "data_file": str(data_path),
+        "fortran_source": "fortran_code/pqu7v2.f",
+        "kf_relative_tolerance": args.rtol,
+        "distance_absolute_tolerance_km": args.distance_tol,
+        "all_full_parity": all_passed,
+        "comparisons": comparisons,
+    }
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    print(f"report: {args.output}")
 
     source_label = "source" if len(sources) == 1 else "sources"
     print(f"PARITY CHECK: {'PASS' if all_passed else 'FAIL'} "

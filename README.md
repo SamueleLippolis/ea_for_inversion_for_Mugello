@@ -178,6 +178,11 @@ For each source, the report shows the residual, predicted-intensity mismatch
 count, kinematic-value (KF) mismatch count, and largest station-distance
 difference. Mismatched site numbers and values are printed. The script exits
 with a nonzero status if any source exceeds the comparison tolerances.
+It also saves the comparison to
+`results/colline_pisane_fortran_python_comparison.json`, including the model,
+residuals, mismatch sites, and Python and Fortran values at every observation
+site. Pass `--output path/to/report.json` to choose another location. The JSON
+report is written even when the parity check fails.
 
 With the current five sources, all 540 predicted intensities and all five
 residuals agree. The Python model now stops combining rupture samples when the
